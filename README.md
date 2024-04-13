@@ -31,15 +31,15 @@ MythicalQuests_v2.0_trimmed| Meant to be used after all content is created. Pack
 
 ```mermaid
 graph TD;
-NPC1[NPC 1] --> 1A[Queststage 1 Quest A]
-NPC1[NPC 1] --> 2A[Queststage 2 Quest A]
-NPC1[NPC 1] --> 1B[Queststage 1 Quest B]
-NPC2[NPC 2] --> 2B[Queststage 2 Quest B]
+NPC1(NPC 1) --> 1A[Queststage 1 Quest A]
+NPC1 --> 2A[Queststage 2 Quest A]
+NPC1 --> 1B[Queststage 1 Quest B]
+NPC2(NPC 2) --> 2B[Queststage 2 Quest B]
 
-1B --> B[Quest B]
+1B --> B{Quest B}
 2B --> B
 
-1A --> A[Quest A]
+1A --> A{Quest A}
 2A --> A
 ```
 <br/>
@@ -103,5 +103,5 @@ NPC2[NPC 2] --> 2B[Queststage 2 Quest B]
 * To summon the Editor, Open the Tools book and click on ``[Summon Editor]``
 * Look at the description of the Tools book. You can close the Editor using the instructions there.
 * Once closed, you will lose all work on the closed editor.
-* You can summon as many editors as you please
+* You can summon as many editors as you please.
 
