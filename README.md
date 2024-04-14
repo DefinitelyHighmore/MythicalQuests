@@ -1,7 +1,8 @@
 <img src="images/title.png" width="1000">
 
 > [!important]
-> This Datapack is made for Minecraft Version 1.20.2 upto 1.20.4
+>* This Datapack is made for Minecraft Version 1.20.2 upto 1.20.4
+>* This Datapack is multiplayer compatible
 
 # Downloads
 
@@ -261,6 +262,155 @@ NPC2(NPC 2) --> 2B[Queststage 2 Quest B]
   Requirements|Add the Requirements by holding it in your hand and pressing the ``[+]`` button.|The Requirements generated in the Requirements and Blacklist Mode Example.
   Blacklist|Add the Blacklist by holding it in your hand and pressing the ``[+]`` button.|The Blacklist generated in the Requirements and Blacklist Mode Example.
   Quest Name and Queststage Name|In a Book and Quil, write in the following format: ``quest:"QUEST NAME",queststage:"QUESTSTAGE NAME"``|A Book and Quil with ``quest:"test",queststage:"1"``
+
+  You can generate the Queststage in an Item form after inputting all necessary components and clicking the ``✅]`` button.
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+
+# NPCs
+* You now need to create a NPC to assign the Queststage to.
+* Open the Tools Book, select ``[NPCs Menu]``
+* Click on ``[Create a New NPC]``
+* Stand in the middle of the model you want, and follow the instructions (Press ``[Click Me!]`` first to get the command template pasted in your chat)
+* To add a Queststage to the newly created NPC, simply hold the queststage and Right Click the NPC.
+* You can Right Click an NPC while holding the Tools book to change it's settings. All options have text explaning them further, so you can click on them to see what they can do.
+>[!note]
+>If you want to modify the Height or Width of the interaction, you may use ``/data modify`` to do it.
+
+>[!tip]
+>* You can Browse through all NPCs that have been created through ``[Browse through NPCs]`` in the ``[NPCs]`` Menu.
+>* You can also search for NPCs according to the Quests they have, using the ``[Search for NPCs]`` option. (A NPC mcan have multiple queststages from different Quests, don't worry!)
+
+>[!tip]
+>* You can browse through all Quests (Quests are created automatically when a Queststage is added to an NPC) through the ``[Browse through Quests]`` option under the ``[Quests Menu]``
+>* You can see a Specific Quest's Queststages using the ``[See a Quest's Queststages]`` option.
+
+* You can delete a NPC by opening it's settings and clicking on ``[Delete this NPC]``. It will warn you. It will also delete all Queststages assigned to the NPC, so take them out before deleting the NPC.
+
+>[!tip]
+>You can take Queststages out of an NPC by Opening it's Settings (Right Click it with the Tools Book) and select ``[See this NPC's Queststages]``. There, click on the ``[-]`` button in front of the Queststage to take it out.
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+# Players
+* Open the ``[Players Menu]`` within the Tools Book.
+* Here you can browse through all registered Players and see their progress, or see a specific Player's progress via their username.
+<br/>
+<br/>
+<br/>
+<br/>
+
+# The Questbook
+* To give yourself or the Player a Questbook, run the following function
+```mcfunction
+function myquest:api/questbook
+```
+* The Questbook is divided into 3 sections:
+  
+  * ``[Available Quests]``: Quests that can be started by the Player
+  * ``[Ongoing Quests]``: Quests the Player has started
+  * ``[Completed Quests]``: Quests the Player has completed
+ 
+* You can assign Objectives to Quests, which are linked to Quest Progress, **not queststages**, and they appear within the Questbook.
+* An Objective has 3 necessary parts:
+
+Part|Description
+---|---
+Quest Name|The Quest under which the Objective appears
+Quest Progress| The Progress under which that Objective Appears for the Specifed Quest
+Objective| The actual Objective
+
+* When an Objective is added, it will appear in the Player's Questbook automatically if they have the corresponding Quest Progress awarded to them.
+<br/>
+<br/>
+
+## Adding Quest Objectives
+* Open the Tools book and selected ``[Quests Menu]``
+* Select ``[Manage a Quest's Objectives]``
+* Enter the name of the Quest you want to Add/Remove Objectives for. Example: ``{quest:"test"}``
+* The menu below will appear for you.
+
+  <img src="images/objmenu.png" width="500">
+
+* Firstly, type out the actual Objective as a tellraw within a Command Block and grab it, similar to Script Dialogue. Example: Command Block with ``tellraw @p {"text":"This is an objective."}``
+* Hold the Command Block in hand, click on ``[Add Objective]`` and enter the Progress that you want the Objective to appear for. Example: ``{progress:"1"}``
+* The objective will now be added.
+* You can see it's Preview by hoving over the icon Indicated. It will look like this:
+
+  <img src="images/objective.png" width="700">
+
+* You can remove the Objective by clicking on the ``[-]`` button in front of it.
+
+## Quest Displayed Name
+* The name shown for the Quest in Objectives for the Questbook only. Does not change the Quest name anywhere else.
+* By default, the display name is a bolded and aqua coloured version of the real Quest name, as shown above.
+* You can change it for a Quest by opening the ``[Quests Menu]`` from the Tools book and selecting the ``[Change a Quest's Displayed Name]``, then follow the instructions.
+
+## Extra Text
+* Extra text is set to ``{"text":""}`` by default, and is the blank gap in an objective between the ``Status:`` and the actual Objective.
+* You can set extra text for a Quest and it will appear in place of that gap for every single Objective for that Quest.
+* Set it by using the ``[Add Extra Text to a Quest]`` option in the ``[Quests Menu]``
+* Type the extra Quest as tellraw in a Command Block, then grab it, similar to Script Dialogue and hold it in your mainhand.
+* Then click on the ``[Click Me]`` button and enter the Quest Name for the Quest.
+
+## Deleting Quests
+* You may delete a Quest by using the ``[Delete a Quest]`` option in the ``[Quests Menu]``.
+* It will not delete Associated NPCs.
+
+## Special Progress values
+* If an Objective is set to appear for the Progress ``"none"`` in a Quest, it will appear in the ``[Available Quests]`` Section of the Questbook.
+* If an Objective is set to appear for the Progress ``"completed"`` in a Quest, it will appear in the ``[Completed Quests]`` Section of the Questbook.
+* Any other Progress values make it appear in the ``[Ongoing Quests]`` Section of the Questbook.
+
+```mermaid
+graph TD;
+QA{Quest A} --> OBA1
+QA{Quest A} --> OBAN
+QB{Quest B} --> OBBC
+QB{Quest B} --> OBB1
+
+
+OBA1[Objective for Progress 1] --> P?A1[Player has Progress?]
+OBAN[Objective for Progress none] --> P?N[Player has Progress?]
+OBBC[Objective for Progress completed] --> P?C[Player has Progress?]
+OBB1[Objective for Progress 1] --> P?B1[Player has Progress?]
+
+P?A1 --> YA1[Yes]
+P?B1 --> YB1[Yes]
+P?N --> YN[Yes]
+P?C --> YC[Yes]
+
+
+P?A1 --> No
+P?B1 --> No
+P?N --> No
+P?C --> No
+
+No --> N[Doesn't Appear in Questbook]
+
+YA1 --> O(Ongoing Quests)
+YB1 --> O(Ongoing Quests)
+YN --> A(Available Quests)
+YC --> C(Completed Quests)
+```
+## Pinning Quests
+* The Player can Pin a Quest in a Section by clicking on it.
+* The Quest's Objective can then be quickly previewed by Right Clicking the Questbook
+* The Quest remains pinned, even with change in Quest Progress, displaying the appropriate Objective for that progress.
+* It can be unpinned by clicking on that Quest again, in it's approrpiate Section.
+
+  
+
+  
+  
+
+
   
   
  
