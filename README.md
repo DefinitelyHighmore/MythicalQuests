@@ -308,9 +308,9 @@ NPC2(NPC 2) --> 2B[Queststage 2 Quest B]
 
 # The Questbook
 * To give yourself or the Player a Questbook, run the following function
-```mcfunction
-function myquest:api/questbook
-```
+  ```mcfunction
+  function myquest:api/questbook
+  ```
 * The Questbook is divided into 3 sections:
   
   * ``[Available Quests]``: Quests that can be started by the Player
@@ -330,91 +330,100 @@ Objective| The actual Objective
 <br/>
 <br/>
 
-## Adding Quest Objectives
-* Open the Tools book and selected ``[Quests Menu]``
-* Select ``[Manage a Quest's Objectives]``
-* Enter the name of the Quest you want to Add/Remove Objectives for. Example: ``{quest:"test"}``
-* The menu below will appear for you.
+  ## Adding Quest Objectives
+  * Open the Tools book and selected ``[Quests Menu]``
+  * Select ``[Manage a Quest's Objectives]``
+  * Enter the name of the Quest you want to Add/Remove Objectives for. Example: ``{quest:"test"}``
+  * The menu below will appear for you.
 
   <img src="images/objmenu.png" width="500">
 
-* Firstly, type out the actual Objective as a tellraw within a Command Block and grab it, similar to Script Dialogue. Example: Command Block with ``tellraw @p {"text":"This is an objective."}``
-* Hold the Command Block in hand, click on ``[Add Objective]`` and enter the Progress that you want the Objective to appear for. Example: ``{progress:"1"}``
-* The objective will now be added.
-* You can see it's Preview by hoving over the icon Indicated. It will look like this:
+  * Firstly, type out the actual Objective as a tellraw within a Command Block and grab it, similar to Script Dialogue. Example: Command Block with ``tellraw @p {"text":"This is an objective."}``
+  * Hold the Command Block in hand, click on ``[Add Objective]`` and enter the Progress that you want the Objective to appear for. Example: ``{progress:"1"}``
+  * The objective will now be added.
+  * You can see it's Preview by hoving over the icon Indicated. It will look like this:
 
   <img src="images/objective.png" width="700">
 
-* You can remove the Objective by clicking on the ``[-]`` button in front of it.
-<br/>
-<br/>
+  * You can remove the Objective by clicking on the ``[-]`` button in front of it.
+  <br/>
+  <br/>
 
-## Quest Displayed Name
-* The name shown for the Quest in Objectives for the Questbook only. Does not change the Quest name anywhere else.
-* By default, the display name is a bolded and aqua coloured version of the real Quest name, as shown above.
-* You can change it for a Quest by opening the ``[Quests Menu]`` from the Tools book and selecting the ``[Change a Quest's Displayed Name]``, then follow the instructions.
-<br/>
-<br/>
+  ## Quest Displayed Name
+  * The name shown for the Quest in Objectives for the Questbook only. Does not change the Quest name anywhere else.
+  * By default, the display name is a bolded and aqua coloured version of the real Quest name, as shown above.
+  * You can change it for a Quest by opening the ``[Quests Menu]`` from the Tools book and selecting the ``[Change a Quest's Displayed Name]``, then follow the instructions.
+  <br/>
+  <br/>
 
-## Extra Text
-* Extra text is set to ``{"text":""}`` by default, and is the blank gap in an objective between the ``Status:`` and the actual Objective.
-* You can set extra text for a Quest and it will appear in place of that gap for every single Objective for that Quest.
-* Set it by using the ``[Add Extra Text to a Quest]`` option in the ``[Quests Menu]``
-* Type the extra Quest as tellraw in a Command Block, then grab it, similar to Script Dialogue and hold it in your mainhand.
-* Then click on the ``[Click Me]`` button and enter the Quest Name for the Quest.
-<br/>
-<br/>
+  ## Extra Text
+  * Extra text is set to ``{"text":""}`` by default, and is the blank gap in an objective between the ``Status:`` and the actual Objective.
+  * You can set extra text for a Quest and it will appear in place of that gap for every single Objective for that Quest.
+  * Set it by using the ``[Add Extra Text to a Quest]`` option in the ``[Quests Menu]``
+  * Type the extra Quest as tellraw in a Command Block, then grab it, similar to Script Dialogue and hold it in your mainhand.
+  * Then click on the ``[Click Me]`` button and enter the Quest Name for the Quest.
+  <br/>
+  <br/>
 
-## Deleting Quests
-* You may delete a Quest by using the ``[Delete a Quest]`` option in the ``[Quests Menu]``.
-* It will not delete Associated NPCs.
-<br/>
-<br/>
+  ## Deleting Quests
+  * You may delete a Quest by using the ``[Delete a Quest]`` option in the ``[Quests Menu]``.
+  * It will not delete Associated NPCs.
+  <br/>
+  <br/>
 
-## Special Progress values
-* If an Objective is set to appear for the Progress ``"none"`` in a Quest, it will appear in the ``[Available Quests]`` Section of the Questbook.
-* If an Objective is set to appear for the Progress ``"completed"`` in a Quest, it will appear in the ``[Completed Quests]`` Section of the Questbook.
-* Any other Progress values make it appear in the ``[Ongoing Quests]`` Section of the Questbook.
+  ## Special Progress values
+  * If an Objective is set to appear for the Progress ``"none"`` in a Quest, it will appear in the ``[Available Quests]`` Section of the Questbook.
+  * If an Objective is set to appear for the Progress ``"completed"`` in a Quest, it will appear in the ``[Completed Quests]`` Section of the Questbook.
+  * Any other Progress values make it appear in the ``[Ongoing Quests]`` Section of the Questbook.
 
-```mermaid
-graph TD;
-QA{Quest A} --> OBA1
-QA{Quest A} --> OBAN
-QB{Quest B} --> OBBC
-QB{Quest B} --> OBB1
-
-
-OBA1[Objective for Progress 1] --> P?A1[Player has Progress?]
-OBAN[Objective for Progress none] --> P?N[Player has Progress?]
-OBBC[Objective for Progress completed] --> P?C[Player has Progress?]
-OBB1[Objective for Progress 1] --> P?B1[Player has Progress?]
-
-P?A1 --> YA1[Yes]
-P?B1 --> YB1[Yes]
-P?N --> YN[Yes]
-P?C --> YC[Yes]
+  ```mermaid
+  graph TD;
+  QA{Quest A} --> OBA1
+  QA{Quest A} --> OBAN
+  QB{Quest B} --> OBBC
+  QB{Quest B} --> OBB1
 
 
-P?A1 --> No
-P?B1 --> No
-P?N --> No
-P?C --> No
+  OBA1[Objective for Progress 1] --> P?A1[Player has Progress?]
+  OBAN[Objective for Progress none] --> P?N[Player has Progress?]
+  OBBC[Objective for Progress completed] --> P?C[Player has Progress?]
+  OBB1[Objective for Progress 1] --> P?B1[Player has Progress?]
 
-No --> N[Doesn't Appear in Questbook]
+  P?A1 --> YA1[Yes]
+  P?B1 --> YB1[Yes]
+  P?N --> YN[Yes]
+  P?C --> YC[Yes]
 
-YA1 --> O(Ongoing Quests)
-YB1 --> O(Ongoing Quests)
-YN --> A(Available Quests)
-YC --> C(Completed Quests)
-```
-<br/>
-<br/>
 
-## Pinning Quests
-* The Player can Pin a Quest in a Section by clicking on it.
-* The Quest's Objective can then be quickly previewed by Right Clicking the Questbook
-* The Quest remains pinned, even with change in Quest Progress, displaying the appropriate Objective for that progress.
-* It can be unpinned by clicking on that Quest again, in it's approrpiate Section.
+  P?A1 --> No
+  P?B1 --> No
+  P?N --> No
+  P?C --> No
+
+  No --> N[Doesn't Appear in Questbook]
+
+  YA1 --> O(Ongoing Quests)
+  YB1 --> O(Ongoing Quests)
+  YN --> A(Available Quests)
+  YC --> C(Completed Quests)
+  ```
+  <br/>
+  <br/>
+
+  ## Pinning Quests
+  * The Player can Pin a Quest in a Section by clicking on it.
+  * The Quest's Objective can then be quickly previewed by Right Clicking the Questbook
+  * The Quest remains pinned, even with change in Quest Progress, displaying the appropriate Objective for that progress.
+  * It can be unpinned by clicking on that Quest again, in it's approrpiate Section.
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+
+# Tips
+* To prevent Queststages from being able to trigger again, award progress in a Queststage and blacklist that progress, so that the Queststage cannot be triggered again.
+* Always award Progress at the end of a Script, as if a Player Disconnectes before a Script finishes, the reader will stop. If the progress was awarded and it was blacklisted, the player will be unable to restart the Quest.
+* If players forget to reply to a Click Event, they will not be able to Start any new Queststages until they reply, since the reader is waiting for their reply. This can be fixed by relogging.
 
   
 
