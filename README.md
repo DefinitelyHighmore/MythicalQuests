@@ -76,7 +76,7 @@ NPC2(NPC 2) --> 2B[Queststage 2 Quest B]
 * They are stored on the scoreboard ``myquest.settings``
 * Change them using:
   ```mcfunction
-  scoreboard players set $<setting> myquest.settings <number>
+  scoreboard players set <setting> myquest.settings <number>
   
   ##<number>
   #1 --> true
