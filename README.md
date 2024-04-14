@@ -346,11 +346,15 @@ Objective| The actual Objective
   <img src="images/objective.png" width="700">
 
 * You can remove the Objective by clicking on the ``[-]`` button in front of it.
+<br/>
+<br/>
 
 ## Quest Displayed Name
 * The name shown for the Quest in Objectives for the Questbook only. Does not change the Quest name anywhere else.
 * By default, the display name is a bolded and aqua coloured version of the real Quest name, as shown above.
 * You can change it for a Quest by opening the ``[Quests Menu]`` from the Tools book and selecting the ``[Change a Quest's Displayed Name]``, then follow the instructions.
+<br/>
+<br/>
 
 ## Extra Text
 * Extra text is set to ``{"text":""}`` by default, and is the blank gap in an objective between the ``Status:`` and the actual Objective.
@@ -358,10 +362,14 @@ Objective| The actual Objective
 * Set it by using the ``[Add Extra Text to a Quest]`` option in the ``[Quests Menu]``
 * Type the extra Quest as tellraw in a Command Block, then grab it, similar to Script Dialogue and hold it in your mainhand.
 * Then click on the ``[Click Me]`` button and enter the Quest Name for the Quest.
+<br/>
+<br/>
 
 ## Deleting Quests
 * You may delete a Quest by using the ``[Delete a Quest]`` option in the ``[Quests Menu]``.
 * It will not delete Associated NPCs.
+<br/>
+<br/>
 
 ## Special Progress values
 * If an Objective is set to appear for the Progress ``"none"`` in a Quest, it will appear in the ``[Available Quests]`` Section of the Questbook.
@@ -399,6 +407,9 @@ YB1 --> O(Ongoing Quests)
 YN --> A(Available Quests)
 YC --> C(Completed Quests)
 ```
+<br/>
+<br/>
+
 ## Pinning Quests
 * The Player can Pin a Quest in a Section by clicking on it.
 * The Quest's Objective can then be quickly previewed by Right Clicking the Questbook
