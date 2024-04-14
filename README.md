@@ -431,7 +431,7 @@ Objective| The actual Objective
 
 # Tips
 * To prevent Queststages from being able to trigger again, award progress in a Queststage and blacklist that progress, so that the Queststage cannot be triggered again.
-* Always award Progress at the end of a Script, as if a Player Disconnectes before a Script finishes, the reader will stop. If the progress was awarded and it was blacklisted, the player will be unable to restart the Quest.
+* Always award Progress at the end of a Script, as if a Player Disconnects before a Script finishes, the reader will stop. If the progress was awarded and it was blacklisted, the player will be unable to restart the Queststage and the rest of the Script.
 * If players forget to reply to a Click Event, they will not be able to Start any new Queststages until they reply, since the reader is waiting for their reply. This can be fixed by relogging.
 
   
