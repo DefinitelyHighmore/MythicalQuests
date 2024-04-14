@@ -299,9 +299,7 @@ data modify storage myquest:api suffix set value '{"text":"whatever you want"}'
 >* You can see a Specific Quest's Queststages using the ``[See a Quest's Queststages]`` option.
 
 * You can delete a NPC by opening it's settings and clicking on ``[Delete this NPC]``. It will warn you. It will also delete all Queststages assigned to the NPC, so take them out before deleting the NPC.
-
->[!tip]
->You can take Queststages out of an NPC by Opening it's Settings (Right Click it with the Tools Book) and select ``[See this NPC's Queststages]``. There, click on the ``[-]`` button in front of the Queststage to take it out.
+* You can take Queststages out of an NPC by Opening it's Settings (Right Click it with the Tools Book) and select ``[See this NPC's Queststages]``. There, click on the ``[-]`` button in front of the Queststage to take it out.
 
 
 <br/>
