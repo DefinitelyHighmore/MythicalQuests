@@ -82,6 +82,13 @@ NPC2(NPC 2) --> 2B[Queststage 2 Quest B]
   #1 --> true
   #0 --> false
   ```
+  
+  ``<setting>``| Function| Default State
+  ---|---|---
+  $dialogueno|Adds numbering to NPC dialogue, showing current dialogue number and Total no. of Dialogues in the Script|True
+  $spacer|Adds a line gap between NPC Dialogue automatically, making it more readable|True
+  $fastforward|Skips Waiting times set between NPC Dialogue or other elements when NPC is Right Clicked Again|False
+
 * You can set a Prefix and Suffix (Prefix is right before NPC name in a dialogue, Suffix is right after).
 * By Default Prefix is set to ``'{"text":"[","color":"gray"}'`` and suffix is set to ``'{"text":"]: ","color":"gray"}'``
 * You can change this by running the command
@@ -89,14 +96,6 @@ NPC2(NPC 2) --> 2B[Queststage 2 Quest B]
 data modify storage myquest:api prefix set value '{"text":"whatever you want"}'  
 data modify storage myquest:api suffix set value '{"text":"whatever you want"}'
 ```  
-
-
-
-  ``<setting>``| Function| Default State
-  ---|---|---
-  $dialogueno|Adds numbering to NPC dialogue, showing current dialogue number and Total no. of Dialogues in the Script|True
-  $spacer|Adds a line gap between NPC Dialogue automatically, making it more readable|True
-  $fastforward|Skips Waiting times set between NPC Dialogue or other elements when NPC is Right Clicked Again|False
   
   <br/>
   <br/>
