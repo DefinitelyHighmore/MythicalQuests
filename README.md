@@ -82,6 +82,14 @@ NPC2(NPC 2) --> 2B[Queststage 2 Quest B]
   #1 --> true
   #0 --> false
   ```
+* You can set a Prefix and Suffix (Prefix is right before NPC name in a dialogue, Suffix is right after).
+* By Default Prefix is set to ``'{"text":"[","color":"gray"}'`` and suffix is set to ``'{"text":"]: ","color":"gray"}'``
+* You can change this by running the command
+```mcfunction
+data modify storage myquest:api prefix set value '{"text":"whatever you want"}'  
+data modify storage myquest:api suffix set value '{"text":"whatever you want"}'
+```  
+
 
 
   ``<setting>``| Function| Default State
@@ -224,8 +232,12 @@ NPC2(NPC 2) --> 2B[Queststage 2 Quest B]
   * After Adds the Appropriate elements to your Click Event, generate it into an item by clicking on the ``[✅]`` button. You can now add this item to the Script Mode ``[+]`` button to add it to a script.
   >[!tip]
   >Add Brackets such as ``[]`` to the Clickable Text, or give it a unique color to indicate to the Player that this text is clickable.
+
+  >[!important]
+  >Using a ``{"selector":"@s"}``, especially in Click Event Text is very annoying due to it's inherent click event of whispering to the player, which prevents Clicking it. Instead of ``{"selector":"@s"}``, please use ``{"nbt":"name","storage":"myquest:api"}`` instead, as it will have the same effect, minus the annoying part.
   <br/>
   <br/>
+  
 
   ## Requirements Mode and Blacklist Mode
   >[!Note]
