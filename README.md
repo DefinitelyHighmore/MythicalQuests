@@ -228,7 +228,7 @@ data modify storage myquest:api suffix set value '{"text":"whatever you want"}'
   Clickable Text(🖱️)|The text the Player is Supposed to click. Add in the same way as Dialogue in Script Mode.|Command Block with ``tellraw @p "[Hello!]"``
   Command(🛠)|Runs a list of commands in order when Click event is Clicked. Add in the same way as Command in Script Mode. You can add multiple commands.|Chain Command Block with ``give @s emerald``
 
-  * After Adds the Appropriate elements to your Click Event, generate it into an item by clicking on the ``[✅]`` button. You can now add this item to the Script Mode ``[+]`` button to add it to a script.
+  * After Adding the Appropriate elements to your Click Event, generate it into an item by clicking on the ``[✅]`` button. You can now add this item to the Script Mode ``[+]`` button to add it to a script.
   >[!tip]
   >Add Brackets such as ``[]`` to the Clickable Text, or give it a unique color to indicate to the Player that this text is clickable.
 
