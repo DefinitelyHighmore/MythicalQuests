@@ -8,8 +8,8 @@
 
 Download|Description
 ---|---
-MythicalQuests_v2.0.1| All the features of the datapack.
-MythicalQuests_v2.0.1_trimmed| Meant to be used after all content is created. Packs the bare minimum to make already made content function.
+MythicalQuests_v2.1.0| All the features of the datapack.
+MythicalQuests_v2.1.0_trimmed| Meant to be used after all content is created. Packs the bare minimum to make already made content function.
 <br/>
 <br/>
 <br/>
@@ -88,6 +88,7 @@ NPC2(NPC 2) --> 2B[Queststage 2 Quest B]
   $dialogueno|Adds numbering to NPC dialogue, showing current dialogue number and Total no. of Dialogues in the Script|True
   $spacer|Adds a line gap between NPC Dialogue automatically, making it more readable|True
   $fastforward|Skips Waiting times set between NPC Dialogue or other elements when NPC is Right Clicked Again|False
+  $distance|Allows Starting a new Queststage if Player is over 6 blocks away from their last NPC and currently need to reply to a Click Event|False
 
 * You can set a Prefix and Suffix (Prefix is right before NPC name in a dialogue, Suffix is right after).
 * By Default Prefix is set to ``'{"text":"[","color":"gray"}'`` and suffix is set to ``'{"text":"]: ","color":"gray"}'``
@@ -440,7 +441,7 @@ Objective| The actual Objective
 # Tips
 * To prevent Queststages from being able to trigger again, award progress in a Queststage and blacklist that progress, so that the Queststage cannot be triggered again.
 * Always award Progress at the end of a Script, as if a Player Disconnects before a Script finishes, the reader will stop. If the progress was awarded and it was blacklisted, the player will be unable to restart the Queststage and the rest of the Script.
-* If players forget to reply to a Click Event, they will not be able to Start any new Queststages until they reply, since the reader is waiting for their reply. This can be fixed by relogging.
+* If players forget to reply to a Click Event and the distance setting is off, they will not be able to Start any new Queststages until they reply, since the reader is waiting for their reply. This can be fixed by relogging.
 
   
 
