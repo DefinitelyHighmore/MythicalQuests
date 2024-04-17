@@ -229,6 +229,10 @@ data modify storage myquest:api suffix set value '{"text":"whatever you want"}'
   Command(🛠)|Runs a list of commands in order when Click event is Clicked. Add in the same way as Command in Script Mode. You can add multiple commands.|Chain Command Block with ``give @s emerald``
 
   * After Adding the Appropriate elements to your Click Event, generate it into an item by clicking on the ``[✅]`` button. You can now add this item to the Script Mode ``[+]`` button to add it to a script.
+    
+  >[!warning]
+  > When adding Commands to be run, do not add a ``/`` in front of them.
+    
   >[!tip]
   >Add Brackets such as ``[]`` to the Clickable Text, or give it a unique color to indicate to the Player that this text is clickable.
 
@@ -253,6 +257,10 @@ data modify storage myquest:api suffix set value '{"text":"whatever you want"}'
   Quest Progress|Checks if the player has the specified Progress in the specified Quest. In a Book and Quil, write in the following format: ``quest:"QUEST NAME",progress:"PROGRESS"``|Book and Quil with ``quest:"test",progress:"1"``
 
   * After Making the Requirements and Blacklist in the Editor, grab them by clicking on the ``[✅]`` button.
+
+  >[!warning]
+  > When adding Commands to be run, do not add a ``/`` in front of them.
+
   <br/>
   <br/>
 
