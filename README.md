@@ -8,8 +8,8 @@
 
 Download|Description
 ---|---
-MythicalQuests_v2.1.0| All the features of the datapack.
-MythicalQuests_v2.1.0_trimmed| Meant to be used after all content is created. Packs the bare minimum to make already made content function.
+MythicalQuests_v2.1.1| All the features of the datapack.
+MythicalQuests_v2.1.1_trimmed| Meant to be used after all content is created. Packs the bare minimum to make already made content function.
 <br/>
 <br/>
 <br/>
