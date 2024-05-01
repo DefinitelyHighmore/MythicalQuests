@@ -1,15 +1,13 @@
 <img src="images/title.png" width="1000">
 
+> [!caution]
+>* This Datapack has two major versions, one for 1.20.2-1.20.4 and one for 1.20.5+
+>* The Latest Releases have the full pack for their respective Minecraft Versions.
+
 > [!important]
->* This Datapack is made for Minecraft Version 1.20.2 upto 1.20.4
->* This Datapack is multiplayer compatible
+>* You may additionally download trimmed versions of these datapacks AFTER you have created everything you want with the pack. Trimmed versions keep the bare minimum required for already made content to work.
+>* Trimmed versions can be found above in the downloads folder.
 
-# Downloads
-
-Download|Description
----|---
-MythicalQuests_v2.1.1| All the features of the datapack.
-MythicalQuests_v2.1.1_trimmed| Meant to be used after all content is created. Packs the bare minimum to make already made content function.
 <br/>
 <br/>
 <br/>
@@ -73,22 +71,12 @@ NPC2(NPC 2) --> 2B[Queststage 2 Quest B]
 # Settings
 
 * A few important settings to help customize Mythical Quests to your liking.
-* They are stored on the scoreboard ``myquest.settings``
-* Change them using:
-  ```mcfunction
-  scoreboard players set <setting> myquest.settings <number>
-  
-  ##<number>
-  #1 --> true
-  #0 --> false
-  ```
-  
-  ``<setting>``| Function| Default State
-  ---|---|---
-  $dialogueno|Adds numbering to NPC dialogue, showing current dialogue number and Total no. of Dialogues in the Script|True
-  $spacer|Adds a line gap between NPC Dialogue automatically, making it more readable|True
-  $fastforward|Skips Waiting times set between NPC Dialogue or other elements when NPC is Right Clicked Again|False
-  $distance|Allows Starting a new Queststage if Player is over 6 blocks away from their last NPC and currently need to reply to a Click Event|False
+* Can be accessed from within the Tools Book.
+* Give yourself a Tools book by running the following command:
+```mcfunction
+function myquest:api/tools
+```
+* Open the book and Click on the ``[Pack Settings]`` button to configure settings.
 
 * You can set a Prefix and Suffix (Prefix is right before NPC name in a dialogue, Suffix is right after).
 * By Default Prefix is set to ``'{"text":"[","color":"gray"}'`` and suffix is set to ``'{"text":"]: ","color":"gray"}'``
@@ -438,10 +426,32 @@ Objective| The actual Objective
   <br/>
   <br/>
 
+  ## Function Tags
+  * When awarding Quest Progress to a Player which has a corresponding Objective, certain function tags are triggered by the pack.
+  * You may add your own functions to these tags, to for example, make Advancement Toasts informing the Player of changes.
+  * Given below are the function tags and when they trigger:
+
+  Function Tag| Trigger Condition
+  ---|---
+  myquest:quest/available|``none`` progress is awarded.
+  myquest:quest/started|Progress changes from ``none`` to something else.
+  myquest:quest/completed| ``completed`` progress is awarded.
+  myquest:quest/updated|All other cases of progress being awarded.
+
+  * The Pack also provides data on the Objective that triggered these Tags. You may access the following data in the data storage ``myquest:api`` under the following paths:
+
+  Path|Data contained
+  ---|---
+  ``display``|The set Displayed Name of the Quest the Objective belongs to.
+  ``quest``|The real name of the Quest the Objective belongs to.
+  ``objective``|The actual Objective text
+  
+  
+
 # Tips
 * To prevent Queststages from being able to trigger again, award progress in a Queststage and blacklist that progress, so that the Queststage cannot be triggered again.
 * Always award Progress at the end of a Script, as if a Player Disconnects before a Script finishes, the reader will stop. If the progress was awarded and it was blacklisted, the player will be unable to restart the Queststage and the rest of the Script.
-* If players forget to reply to a Click Event and the distance setting is off, they will not be able to Start any new Queststages until they reply, since the reader is waiting for their reply. This can be fixed by relogging.
+
 
   
 
